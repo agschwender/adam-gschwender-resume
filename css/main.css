@@ -266,47 +266,12 @@ body {
 
 #skills .level {
     display: block;
-    position: relative;
     margin-left: 80px;
 }
 
-#skills .level span:first-child,
-#skills .level1,
-#skills .level2,
-#skills .level3,
-#skills .level4,
-#skills .level5 {
-    display: block;
-    position: absolute;
-    height: 18px;
-    background-image: url(../images/star.png);
-    background-repeat: repeat-x;
-}
-
-#skills .level span:first-child {
-    width: 100px;
-    opacity: 0.3;
+#skills .level img.inactive {
+    opacity: 0.30;
     filter: alpha(opacity=30);
-}
-
-#skills .level1 {
-    width: 20px;
-}
-
-#skills .level2 {
-    width: 40px;
-}
-
-#skills .level3 {
-    width: 60px;
-}
-
-#skills .level4 {
-    width: 80px;
-}
-
-#skills .level5 {
-    width: 100px;
 }
 
 @media (max-width: 630px) {
@@ -420,7 +385,7 @@ body {
 
 @media (max-width: 325px) {
     [data-role=header] h1 {
-        font-size: 250%;
+        font-size: 275%;
     }
 }
 
