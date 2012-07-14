@@ -89,6 +89,7 @@ body {
 
 [data-role=header] ul li {
     margin-bottom: 2px;
+    position: relative;
 }
 
 [data-role=header] ul li:last-child {
@@ -96,50 +97,64 @@ body {
 }
 
 [data-role=header] ul.contact a {
-    background-repeat: no-repeat;
     color: #333333;
-    display: inline-block;
+    display: block;
     font-size: 130%;
     line-height: 24px;
-    padding-left: 35px;
     text-decoration: none;
+    top: 0;
+    left: 0;
+    margin-left: 35px;
 }
 
 [data-role=header] ul.contact a:hover {
     text-decoration: underline;
 }
 
-#web a {
-    background-image: url(../images/imac.png);
-    background-position: 0px 1px;
+[data-role=header] ul.contact li img {
+    position: absolute;
+    display: block;
+    top: 0px;
 }
 
-#email a {
-    background-image: url(../images/envelope.png);
-    background-position: 1px 4px;
+#web img {
+    margin-top: 1px;
 }
 
-#phone a {
-    background-image: url(../images/iphone.png);
-    background-position: 6px 0px;
+#email img {
+    margin-top: 4px;
+    margin-left: 1px;
+}
+
+#phone img {
+    margin-left: 6px;
 }
 
 /* Content */
 [data-role=content] { margin-top: 10px; }
 
 [data-role=content] h3 {
-    background-repeat: no-repeat;
     color: #000000;
     font-size: 200%;
     font-weight: normal;
-    line-height: 28px;
     margin-top: 20px;
-    padding-left: 35px;
     text-transform: uppercase;
+    position: relative;
+    overflow: visible;
+    height: 28px;
 }
 
-#experience h3 {
-    background-image: url(../images/clipboard.png);
+[data-role=content] h3 > img {
+    position: absolute;
+    display: block;
+}
+
+[data-role=content] h3 > span {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 35px;
+    line-height: 28px;
 }
 
 #experience .history > div:first-child > * {
@@ -178,9 +193,8 @@ body {
     font-weight: bold;
 }
 
-#miscellaneous h3 {
-    background-image: url(../images/lightbulb.png);
-    background-position: 0px 1px;
+#miscellaneous h3 > img {
+    margin-top: 1px;
 }
 
 #miscellaneous h4 {
@@ -218,9 +232,8 @@ body {
     text-decoration: underline;
 }
 
-#skills h3 {
-    background-image: url(../images/cogwheels.png);
-    background-position: 0px 1px;
+#skills h3 > img {
+    margin-top: 1px;
 }
 
 #skills ul {
