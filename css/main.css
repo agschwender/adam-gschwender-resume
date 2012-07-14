@@ -1,0 +1,127 @@
+* {padding: 0; margin: 0; outline: 0; border: 0}
+
+@font-face {
+    font-family: 'Titillium';
+    src:url('../fonts/titilliumtext22l003-webfont.eot');
+    src:url('../fonts/titilliumtext22l003-webfont.eot?iefix') format('eot'), url('../fonts/titilliumtext22l003-webfont.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Titillium';
+    src:url('../fonts/titilliumtext22l005-webfont.eot');
+    src:url('../fonts/titilliumtext22l005-webfont.eot?iefix') format('eot'), url('../fonts/titilliumtext22l005-webfont.ttf') format('truetype');
+    font-weight: bold;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 768px;
+    font-family: Titillium,Helvetica,Arial,sans-serif;
+    font-size: 10px;
+}
+
+.row-fluid {
+    width: 100%;
+}
+
+.row-fluid::before,
+.row-fluid::after {
+    display: table;
+    content: "";
+}
+
+.row-fluid::after {
+    clear: both;
+}
+
+[class*=span] {
+    float: left;
+    position: relative;
+}
+
+.span4 {
+    width: 33%;
+}
+
+.span8 {
+    width: 66%;
+}
+
+.span12 {
+    width: 100%;
+}
+
+/* Header */
+[data-role=header] h1 {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 500%;
+}
+
+[data-role=header] h2 {
+    color: #999999;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+[data-role=header] ul.contact {
+    position: absolute;
+    right: 0;
+    list-style: none;
+    margin-top: 15px;
+}
+
+[data-role=header] ul li {
+    margin-bottom: 2px;
+}
+
+[data-role=header] ul li:last-child {
+    margin-bottom: 0px;
+}
+
+[data-role=header] ul.contact a {
+    background-repeat: no-repeat;
+    color: #333333;
+    display: inline-block;
+    font-size: 130%;
+    line-height: 24px;
+    padding-left: 35px;
+    text-decoration: none;
+}
+
+#web a {
+    background-image: url(../images/glyphicons_160_imac.png);
+    background-position: 0px 1px;
+}
+
+#email a {
+    background-image: url(../images/glyphicons_010_envelope.png);
+    background-position: 1px 4px;
+}
+
+#phone a {
+    background-image: url(../images/glyphicons_163_iphone.png);
+    background-position: 6px 0px;
+}
+
+/* Content */
+[data-role=content] { margin-top: 10px; }
+
+[data-role=content] h3 {
+    margin-top: 20px;
+    font-size: 200%;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+[data-role=content] h3 a {
+    color: #000000;
+    display: inline-block;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    line-height: 28px;
+    padding-left: 30px;
+}
+
+#experience a {
+    background-image: url(../images/glyphicons_029_notes_2.png);
+}
