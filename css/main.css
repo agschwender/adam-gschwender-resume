@@ -39,12 +39,28 @@ body {
     position: relative;
 }
 
+.span2 {
+    width: 16%;
+}
+
+.span3 {
+    width: 25%;
+}
+
 .span4 {
     width: 33%;
 }
 
 .span8 {
-    width: 66%;
+    width: 67%;
+}
+
+.span9 {
+    width: 75%;
+}
+
+.span10 {
+    width: 84%;
 }
 
 .span12 {
@@ -124,4 +140,18 @@ body {
 
 #experience a {
     background-image: url(../images/glyphicons_029_notes_2.png);
+}
+
+#experience .history {
+    margin-top: 15px;
+}
+
+#experience h4 {
+    color: #333333;
+    font-size: 140%;
+}
+
+#experience p {
+    color: #999999;
+    font-size: 130%;
 }
