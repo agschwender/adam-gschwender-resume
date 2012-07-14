@@ -1,0 +1,77 @@
+﻿Adam Gschwender
+444 W 48th St. Apt 2F, New York, NY 10036
+203-606-4755
+adam.gschwender@gmail.com
+
+SUMMARY
+
+Software engineer with over 10 years of web development experience in heavily trafficked websites.
+
+COMPUTER SKILLS
+
+    Languages
+        • Proficient in: PHP, Python, JavaScript, CSS, HTML/XHTML, XML
+        • Familiar with: Java, Perl, C/C++, TCL, Shell, Coldfusion
+
+    Formats/Protocols/Standards
+        • JSON, SOAP, RDF, RDFa, SEO, RSS, XML, Sitemaps
+
+    Software
+        • Databases: Oracle, MongoDB, MySQL, SQL Server, Elasticsearch
+        • Platforms: Linux, Unix
+        • Version Control Systems: SVN, CVS, GNU arch, Git
+        • Web Servers: Apache, Nginx, AOLServer, IIS
+        • Libraries/Frameworks: jQuery, Google APIs, Facebook API, Tornado, Pylons, Disco
+
+EXPERIENCE
+
+    Senior Developer 02/2011-Present Self-employed
+        • Implemented a preferential voting system that allows users to quickly rank items relative to each other.
+        • Used Tornado to perform server side asynchronous HTTP requests to Facebook. 
+        • Used RabbitMQ to sync data from MongoDB to Elasticsearch and to process events.
+        • Developed a Chrome extension for interacting with Reddit's search API. 
+        • Developed a URL preview application using PyQt, Qt4 and Webkit.
+
+    Senior Web Developer 10/2009-02/2011 Interactive One
+        • Implemented the OpenSocial container specification.
+        • Developed search application using Elasticsearch and Disco, a MapReduce framework.
+        • Applied Google's SEO best practices to various areas of the sites. 
+        • Identified and fixed several XSS vulnerabilities. 
+        • Developed an ORM library for mapping objects to queries.
+
+    Software Engineer 6/2008-9/2009 New York Times Co.
+        • Implemented the New York Times site search using Google's Custom Search Engine.
+        • Created conceptualization and categorization services for extracting semantic information which can be embedded as meta data and linked to relevant topics. 
+        • Developed an application to produce XML and HTML Sitemaps.
+
+    Consultant 7/2006-5/2008 Community Connect Inc.
+        • Developed the Blackplanet.com music site. 
+        • Implemented a functional interface to support Intercasting's mobile phone application. 
+        • Implemented the Google Profile for increasing ad revenue.
+        • Completed several medium sized projects: dating match email and note notifications, marketing campaign tracking tools, and a collaborative filtering application.
+
+    Consultant 10/2005-7/2006 Cosential.com
+        • Developed a data syncing application using SOAP and Coldfusion which can export data from a client's accounting database and import into the Cosential marketing and management database.
+        • Implemented an ajax enabled, edit in place project management tool for calculating the cost and profitability of a project. 
+        • In addition to these larger projects, performed site maintenance, minor enhancements and mentored junior developers.
+
+    Senior Web Developer 6/2002-8/2005 Community Connect Inc.
+        • Acted as technical lead in building the dating application for AsianAve, BlackPlanet and MiGente as well as contributed to writing the transaction (billing) application which interfaces with Telecheck and ClearCommerce. 
+        • Was involved in the following key pieces of functionality for the community sites: Registration, Profile Creation, Dating, Instant Messenger, Homepage.
+
+    Software Engineer 12/2001-4/2002 NetCreations
+        • Designed, developed and maintained Web and Server based applications for a high-volume Website production environment which was written in Oracle and Perl. 
+    
+    Senior Web Developer 12/1999-12/2001 JobDirect.com
+        • Managed a team responsible for maintaining JobDirect.com and releasing all new development and enhancements.  
+        • Built the entire employer portion of JobDirect.com using TCL and Oracle as well as built the corresponding E-Commerce site which securely submits data, via SSL, to CyberCash. 
+        • Manipulated user Word and RTF documents using perl. 
+
+MISCELLANEOUS
+
+    Open Source Projects
+        • Reddit Anywhere Chrome Extension on github at agschwender/reddited-extension
+        • NSFW or SFW? A URL previewer on github at agschwender/nsfw
+
+    Publications
+        • Elahi, Ata, and Gschwender, Adam. ZigBee Wireless Sensor and Control Network. Boston: Prentice Hall, 2009.
