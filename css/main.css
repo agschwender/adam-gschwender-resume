@@ -15,6 +15,7 @@
 
 body {
     margin: 0 auto;
+    padding: 0px 15px 15px 15px;
     max-width: 768px;
     font-family: Titillium,Helvetica,Arial,sans-serif;
     font-size: 10px;
@@ -123,23 +124,22 @@ body {
 [data-role=content] { margin-top: 10px; }
 
 [data-role=content] h3 {
-    margin-top: 20px;
+    background-repeat: no-repeat;
+    color: #000000;
     font-size: 200%;
     font-weight: normal;
+    line-height: 28px;
+    margin-top: 20px;
+    padding-left: 35px;
     text-transform: uppercase;
 }
 
-[data-role=content] h3 a {
-    color: #000000;
-    display: inline-block;
-    text-decoration: none;
-    background-repeat: no-repeat;
-    line-height: 28px;
-    padding-left: 30px;
+#experience h3 {
+    background-image: url(../images/glyphicons_029_notes_2.png);
 }
 
-#experience a {
-    background-image: url(../images/glyphicons_029_notes_2.png);
+#experience .history > div:first-child > * {
+    padding-left: 35px;
 }
 
 #experience .history {
@@ -154,4 +154,82 @@ body {
 #experience p {
     color: #999999;
     font-size: 130%;
+}
+
+#skills h3 {
+    background-image: url(../images/glyphicons_023_cogwheels.png);
+    background-position: 0px 1px;
+}
+
+#skills ul {
+    list-style: none;
+    margin-top: 15px;
+    overflow: visible;
+    padding-left: 35px;
+}
+
+#skills ul li {
+    color: #333333;
+    display: block;
+    float: left;
+    font-size: 130%;
+    width: 33%;
+}
+
+#skills .title {
+    display: block;
+    line-height: 20px;
+    width: 80px;
+    float: left;
+}
+
+#skills .title::after {
+    color: #333333;
+    content: ": ";
+    font-size: 130%;
+}
+
+#skills .level {
+    display: block;
+    position: relative;
+    margin-left: 80px;
+}
+
+#skills .level span:first-child,
+#skills .level1,
+#skills .level2,
+#skills .level3,
+#skills .level4,
+#skills .level5 {
+    display: block;
+    position: absolute;
+    height: 18px;
+    background-image: url(../images/glyphicons_049_star.png);
+    background-repeat: repeat-x;
+}
+
+#skills .level span:first-child {
+    width: 100px;
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+}
+
+#skills .level1 {
+    width: 20px;
+}
+
+#skills .level2 {
+    width: 40px;
+}
+
+#skills .level3 {
+    width: 60px;
+}
+
+#skills .level4 {
+    width: 80px;
+}
+
+#skills .level5 {
+    width: 100px;
 }
