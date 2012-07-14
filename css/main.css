@@ -385,7 +385,7 @@ body {
 
 @media (max-width: 325px) {
     [data-role=header] h1 {
-        font-size: 275%;
+        font-size: 280%;
     }
 }
 
