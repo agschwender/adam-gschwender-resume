@@ -37,7 +37,6 @@ body {
 
 [class*=span] {
     float: left;
-    position: relative;
 }
 
 .span2 {
@@ -71,18 +70,19 @@ body {
 /* Header */
 [data-role=header] h1 {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 500%;
+    font-size: 490%;
+    max-width: 470px;
 }
 
 [data-role=header] h2 {
     color: #999999;
     font-weight: normal;
     text-transform: uppercase;
+    max-width: 470px;
 }
 
 [data-role=header] ul.contact {
-    position: absolute;
-    right: 0;
+    float: right;
     list-style: none;
     margin-top: 15px;
 }
@@ -105,18 +105,22 @@ body {
     text-decoration: none;
 }
 
+[data-role=header] ul.contact a:hover {
+    text-decoration: underline;
+}
+
 #web a {
-    background-image: url(../images/glyphicons_160_imac.png);
+    background-image: url(../images/imac.png);
     background-position: 0px 1px;
 }
 
 #email a {
-    background-image: url(../images/glyphicons_010_envelope.png);
+    background-image: url(../images/envelope.png);
     background-position: 1px 4px;
 }
 
 #phone a {
-    background-image: url(../images/glyphicons_163_iphone.png);
+    background-image: url(../images/iphone.png);
     background-position: 6px 0px;
 }
 
@@ -135,11 +139,15 @@ body {
 }
 
 #experience h3 {
-    background-image: url(../images/glyphicons_029_notes_2.png);
+    background-image: url(../images/clipboard.png);
 }
 
 #experience .history > div:first-child > * {
     padding-left: 35px;
+}
+
+#experience .history > div:last-child > * {
+    padding-left: 15px;
 }
 
 #experience .history {
@@ -156,8 +164,62 @@ body {
     font-size: 130%;
 }
 
+#experience p.skills {
+    margin-top: 5px;
+    display: none;
+}
+
+#experience .history.hover p.skills {
+    display: block;
+}
+
+#experience p.skills strong {
+    color: #333333;
+    font-weight: bold;
+}
+
+#miscellaneous h3 {
+    background-image: url(../images/lightbulb.png);
+    background-position: 0px 1px;
+}
+
+#miscellaneous h4 {
+    color: #333333;
+    font-size: 140%;
+}
+
+#miscellaneous .item {
+    margin-top: 15px;
+}
+
+#miscellaneous .item > div:first-child > * {
+    padding-left: 35px;
+}
+
+#miscellaneous .item > div:last-child > * {
+    padding-left: 15px;
+}
+
+#miscellaneous ul {
+    list-style: none;
+}
+
+#miscellaneous ul li {
+    color: #999999;
+    font-size: 130%;
+}
+
+#miscellaneous ul li a {
+    color: #333333;
+    text-decoration: none;
+}
+
+#miscellaneous ul li a:hover {
+    text-decoration: underline;
+}
+
 #skills h3 {
-    background-image: url(../images/glyphicons_023_cogwheels.png);
+    background-image: url(../images/cogwheels.png);
     background-position: 0px 1px;
 }
 
@@ -204,7 +266,7 @@ body {
     display: block;
     position: absolute;
     height: 18px;
-    background-image: url(../images/glyphicons_049_star.png);
+    background-image: url(../images/star.png);
     background-repeat: repeat-x;
 }
 
@@ -232,4 +294,134 @@ body {
 
 #skills .level5 {
     width: 100px;
+}
+
+@media (max-width: 630px) {
+    [data-role=header] h1 {
+        font-size: 390%;
+        max-width: 380px;
+    }
+
+    [data-role=header] h2 {
+        max-width: 380px;
+    }
+
+    #skills ul li {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    [data-role=header] h1 {
+        font-size: 470%;
+        max-width: 470px;
+    }
+
+    [data-role=header] h2 {
+        max-width: 470px;
+    }
+
+    [data-role=header] .span9,
+    [data-role=header] .span3 {
+        width: 100%;
+    }
+
+    [data-role=header] ul.contact {
+        float: none;
+        overflow: visible;
+    }
+
+    [data-role=header] ul.contact::before,
+    [data-role=header] ul.contact::after {
+        display: table;
+        content: "";
+    }
+
+    [data-role=header] ul.contact::after {
+        clear: both;
+    }
+
+    [data-role=header] ul.contact li {
+        float: left;
+        width: 33%;
+    }
+
+    [data-role=header] ul.contact li:last-child {
+        margin-right: 0px;
+        float: right;
+        width: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    #experience .span9,
+    #experience .span3,
+    #miscellaneous .span9,
+    #miscellaneous .span3 {
+        width: 100%;
+    }
+
+    #experience .history > div:first-child > *,
+    #experience .history > div:last-child > *,
+    #miscellaneous .item > div:first-child > *,
+    #miscellaneous .item > div:last-child > * {
+        padding-left: 0px;
+    }
+
+    #experience .history > div:first-child,
+    #miscellaneous .item > div:first-child {
+        margin-bottom: 5px;
+    }
+
+    #experience .history.hover p.skills {
+        display: none;
+    }
+}
+
+@media (max-width: 460px) {
+    [data-role=header] h1 {
+        font-size: 400%;
+    }
+}
+
+@media (max-width: 425px) {
+    #skills ul li {
+        width: 100%;
+    }
+
+    [data-role=header] ul.contact li:first-child {
+        display: none;
+    }
+
+    [data-role=header] ul.contact li {
+        float: left;
+        width: auto;
+        margin-right: 20px;
+    }
+
+    [data-role=header] ul.contact li:last-child {
+        float: left;
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 325px) {
+    [data-role=header] h1 {
+        font-size: 250%;
+    }
+}
+
+@media print {
+    [data-role=header] h1 {
+        font-size: 450%;
+        max-width: 425px;
+    }
+
+    [data-role=header] h2 {
+        max-width: 425px;
+    }
+
+    #experience p.skills {
+        display: block;
+    }
 }
