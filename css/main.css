@@ -25,13 +25,13 @@ body {
     width: 100%;
 }
 
-.row-fluid::before,
-.row-fluid::after {
+.row-fluid:before,
+.row-fluid:after {
     display: table;
     content: "";
 }
 
-.row-fluid::after {
+.row-fluid:after {
     clear: both;
 }
 
@@ -268,7 +268,7 @@ body {
     float: left;
 }
 
-#skills .title::after {
+#skills .title:after {
     color: #333333;
     content: ": ";
     font-size: 130%;
