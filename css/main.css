@@ -307,27 +307,32 @@ body {
     [data-role=header] ul.contact {
         float: none;
         overflow: visible;
-    }
-
-    [data-role=header] ul.contact::before,
-    [data-role=header] ul.contact::after {
-        display: table;
-        content: "";
-    }
-
-    [data-role=header] ul.contact::after {
-        clear: both;
+        position: relative;
+        height: 24px;
     }
 
     [data-role=header] ul.contact li {
-        float: left;
-        width: 33%;
+        position: absolute;
     }
 
-    [data-role=header] ul.contact li:last-child {
-        margin-right: 0px;
-        float: right;
+    #web, #phone {
+        top: 0px;
         width: auto;
+    }
+
+    #phone {
+        right: 0px;
+    }
+
+    #email {
+        top: 0px;
+        width: 100%;
+    }
+
+
+    #email div {
+        width: 150px;
+        margin: 0 auto;
     }
 }
 
@@ -367,14 +372,13 @@ body {
         width: 100%;
     }
 
-    [data-role=header] ul.contact li:first-child {
+    #web {
         display: none;
     }
 
-    [data-role=header] ul.contact li {
-        float: left;
+    #email {
+        left: 0px;
         width: auto;
-        margin-right: 20px;
     }
 
     [data-role=header] ul.contact li:last-child {
