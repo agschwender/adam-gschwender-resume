@@ -96,7 +96,7 @@ body {
     margin-bottom: 0px;
 }
 
-[data-role=header] ul.contact a {
+#web a, #email a, #phone a {
     color: #333333;
     display: block;
     font-size: 130%;
@@ -107,11 +107,11 @@ body {
     margin-left: 35px;
 }
 
-[data-role=header] ul.contact a:hover {
+#web a:hover, #email a:hover, #phone a:hover {
     text-decoration: underline;
 }
 
-[data-role=header] ul.contact li img {
+#web img, #email img, #phone img {
     position: absolute;
     display: block;
     top: 0px;
@@ -130,9 +130,19 @@ body {
     margin-left: 6px;
 }
 
-/* Content */
-[data-role=content] { margin-top: 10px; }
+#format {
+    margin-top: 10px;
+}
 
+#format a {
+    margin-left: 10px;
+}
+
+#format a:first-child {
+    margin-left: 1px;
+}
+
+/* Content */
 [data-role=content] h3 {
     color: #000000;
     font-size: 200%;
@@ -290,6 +300,8 @@ body {
 }
 
 @media screen and (max-width: 550px) {
+    [data-role=content] { margin-top: 10px; }
+
     [data-role=header] h1 {
         font-size: 470%;
         max-width: 470px;
@@ -334,6 +346,8 @@ body {
         width: 150px;
         margin: 0 auto;
     }
+
+    #format { display: none; }
 }
 
 @media (max-width: 500px) {
@@ -394,6 +408,8 @@ body {
 }
 
 @media print {
+    [data-role=content] { margin-top: 10px; }
+
     [data-role=header] h1 {
         font-size: 450%;
         max-width: 425px;
@@ -405,5 +421,9 @@ body {
 
     #experience p.skills {
         display: block;
+    }
+
+    #format {
+        display: none;
     }
 }
