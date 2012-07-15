@@ -183,21 +183,12 @@
         function recordOutboundLink(link, category, action) {
             _gat._getTrackerByName()._trackEvent(
                 category, $(link).attr('href'));
-            setTimeout(function() {
-                 if ($(link).attr('target')) {
-                     var w = window.open($(link).attr('href'),
-                                         $(link).attr('target'));
-                     w.focus();
-                 } else {
-                     document.location = $(link).attr('href');
-                 }
-             }, 100);
         }
 
         $(document).ready(function() {
             $('a[target=_blank]').click(function() {
                 recordOutboundLink($(this)[0], 'Outbound Links');
-                return false;
+                return true;
             });
         });
     </script>
