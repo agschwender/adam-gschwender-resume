@@ -179,6 +179,19 @@
             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
          })();
+
+        function recordOutboundLink(link, category, action) {
+            _gat._getTrackerByName()._trackEvent(category, link.href);
+            setTimeout('document.location = "' + link.href + '"', 100);
+        }
+
+        $(document).ready(function() {
+            $('a[target=_blank]').click(function() {
+                console.log($(this).attr('href'));
+                recordOutboundLink($(this)[0], 'Outbound Links');
+                return false;
+            });
+        });
     </script>
   </body>
 </html>
