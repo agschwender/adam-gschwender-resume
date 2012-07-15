@@ -7,7 +7,7 @@
     <meta name="keywords" content="Adam Gschwender, resume, software engineer, web development" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP/Python Developer Resume New York - Adam Gschwender</title>
-    <base href="/" />
+    <!-- <base href="/" /> -->
     <link rel="shortcut icon" href="images/favicon.ico" />
     <link rel="canonical" href="http://www.gschwa.com/resume/adam-gschwender.html" />
     <link rel="alternate" href="resume/adam-gschwender.doc" type="application/msword" title="Microsoft Word Version" />
@@ -181,13 +181,21 @@
          })();
 
         function recordOutboundLink(link, category, action) {
-            _gat._getTrackerByName()._trackEvent(category, link.href);
-            setTimeout('document.location = "' + link.href + '"', 100);
+            _gat._getTrackerByName()._trackEvent(
+                category, $(link).attr('href'));
+            setTimeout(function() {
+                 if ($(link).attr('target')) {
+                     var w = window.open($(link).attr('href'),
+                                         $(link).attr('target'));
+                     w.focus();
+                 } else {
+                     document.location = $(link).attr('href');
+                 }
+             }, 100);
         }
 
         $(document).ready(function() {
             $('a[target=_blank]').click(function() {
-                console.log($(this).attr('href'));
                 recordOutboundLink($(this)[0], 'Outbound Links');
                 return false;
             });
