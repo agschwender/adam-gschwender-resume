@@ -14,7 +14,7 @@ COMPUTER SKILLS
         • Familiar with: Perl, C/C++, TCL, Shell, Coldfusion
 
     Formats/Protocols/Standards
-        • JSON, SOAP, RDF, RDFa, SEO, RSS, XML, Sitemaps
+        • JSON, SOAP, RDF, RDFa, SEO, RSS, Sitemaps
 
     Software
         • Databases: Oracle, MongoDB, MySQL, SQL Server, Elasticsearch
