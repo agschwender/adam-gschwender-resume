@@ -253,7 +253,7 @@ body {
 
 #skills .title {
     display: block;
-    line-height: 20px;
+    line-height: 22px;
     width: 80px;
     float: left;
 }
@@ -267,6 +267,7 @@ body {
 #skills .level {
     display: block;
     margin-left: 80px;
+    margin-top: 3px;
 }
 
 #skills .level img.inactive {
@@ -390,6 +391,28 @@ body {
 @media (max-width: 325px) {
     [data-role=header] h1 {
         font-size: 280%;
+    }
+
+    #skills .title {
+        width: 62px;
+    }
+
+    #skills .level {
+        margin-left: 62px;
+    }
+}
+
+@media (max-width: 310px) {
+    #skills ul li {
+        width: 100%;
+    }
+
+    #skills .title {
+        width: 80px;
+    }
+
+    #skills .level {
+        margin-left: 80px;
     }
 }
 
