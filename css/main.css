@@ -14,7 +14,7 @@
 }
 
 body {
-    margin: 0 auto;
+    margin: 10px auto 0px auto;
     padding: 0px 15px 15px 15px;
     max-width: 768px;
     font-family: Titillium,Helvetica,Arial,sans-serif;
@@ -84,7 +84,7 @@ body {
 [data-role=header] ul.contact {
     float: right;
     list-style: none;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 [data-role=header] ul li {
@@ -146,7 +146,7 @@ body {
 [data-role=content] h3 {
     color: #000000;
     font-size: 200%;
-    font-weight: normal;
+    font-weight: bold;
     margin-top: 20px;
     text-transform: uppercase;
     position: relative;
@@ -163,12 +163,7 @@ body {
     position: absolute;
     display: block;
     top: 0;
-    left: 35px;
     line-height: 28px;
-}
-
-#experience .history > div:first-child > * {
-    padding-left: 35px;
 }
 
 #experience .history > div:last-child > * {
@@ -216,10 +211,6 @@ body {
     margin-top: 15px;
 }
 
-#miscellaneous .item > div:first-child > * {
-    padding-left: 35px;
-}
-
 #miscellaneous .item > div:last-child > * {
     padding-left: 15px;
 }
@@ -250,7 +241,6 @@ body {
     list-style: none;
     margin-top: 15px;
     overflow: visible;
-    padding-left: 35px;
 }
 
 #skills ul li {
@@ -382,10 +372,6 @@ body {
 }
 
 @media (max-width: 425px) {
-    #skills ul li {
-        width: 100%;
-    }
-
     #web {
         display: none;
     }
