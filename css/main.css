@@ -251,14 +251,14 @@ body {
     width: 33%;
 }
 
-#skills .title {
+#skills .skill {
     display: block;
     line-height: 22px;
     width: 80px;
     float: left;
 }
 
-#skills .title:after {
+#skills .skill:after {
     color: #333333;
     content: ": ";
     font-size: 130%;
@@ -393,7 +393,7 @@ body {
         font-size: 280%;
     }
 
-    #skills .title {
+    #skills .skill {
         width: 62px;
     }
 
@@ -407,7 +407,7 @@ body {
         width: 100%;
     }
 
-    #skills .title {
+    #skills .still {
         width: 80px;
     }
 
