@@ -7,7 +7,7 @@
     <meta name="keywords" content="Adam Gschwender, resume, software engineer, web development, PHP, Python" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP/Python Developer Resume New York - Adam Gschwender</title>
-    <base href="/" />
+    <base href="" />
     <link rel="shortcut icon" href="images/favicon.ico" />
     <link rel="canonical" href="http://www.gschwa.com/resume/adam-gschwender.html" />
     <link rel="alternate" href="resume/adam-gschwender.doc" type="application/msword" title="Microsoft Word Version" />
@@ -15,17 +15,18 @@
     <link rel="alternate" href="resume/adam-gschwender.txt" type="text/plain" title="Plain Text Version" />
     <link rel="stylesheet" href="css/main.min.css" type="text/css" />
   </head>
-  <body>
+  <body class="vcard">
     <div data-role="header">
       <div class="row-fluid">
         <div class="span9">
-          <h1>Adam Gschwender</h1>
+          <img class="photo" src="images/adam-gschwender-thumbnail.png" width="150" height="150" style="display:none" />
+          <h1 class="fn n"><span class="given-name">Adam</span> <span class="family-name">Gschwender</span></h1>
           <h2>Software engineer with over 10 years of web development experience in heavily trafficked websites</h2>
         </div>
         <div class="span3">
           <ul class="contact">
-            <li id="web"><img src="images/imac.png" width="26" height="22" /><a href="http://www.gschwa.com/">gschwa.com</a></li>
-            <li id="email"><div><img src="images/envelope.png" width="24" height="16" /><a href="#"></a></div></li>
+            <li id="web"><img src="images/imac.png" width="26" height="22" /><a class="url" href="http://www.gschwa.com/">gschwa.com</a></li>
+            <li id="email"><div><img src="images/envelope.png" width="24" height="16" /><a class="email" href="mailto:adam@gschwa.com">adam@gschwa.com</a></div></li>
             <li id="phone"><img src="images/iphone.png" width="14" height="24" /><a href="#"></a></li>
             <li id="format"><a href="http://www.linkedin.com/pub/adam-gschwender/30/829/ab4" title="View on LinkedIn" target="_blank"><img src="images/linked_in.png" width="24" height="24" alt="LinkedIn" /></a><a href="resume/adam-gschwender.pdf" title="View as a PDF document" target="_blank"><img src="images/pdf.png" width="25" height="24" alt="PDF Format" /></a><a href="resume/adam-gschwender.doc" title="View as a Word document" target="_blank"><img src="images/doc.png" width="25" height="24" alt="Word Format" /></a><a href="resume/adam-gschwender.txt" title="View as plain text" target="_blank"><img src="images/txt.png" width="25" height="24" alt="Text Format" /></a></li>
           </ul>
@@ -41,7 +42,7 @@
         </div>
         <div class="row-fluid history">
           <div class="span3">
-            <h4>McCann Erickson</h4>
+            <h4 class="org">McCann Erickson</h4>
             <p class="duration">2011-Present</p>
             <p class="skills"><strong>Skills:</strong> Django, Java, jQuery, MySQL, Play, Python, Ubuntu, WebLogic</p>
           </div>
@@ -162,9 +163,6 @@
         $(document).ready(function() {
             $('.history').hover(function() { $(this).addClass('hover'); },
                                 function() { $(this).removeClass('hover'); });
-            $('#email a')
-                .attr('href', 'mailto:' + 'adam' + '@' + 'gschwa' + '.' + 'com')
-                .text('adam' + '@' + 'gschwa' + '.' + 'com');
             $('#phone a')
                 .attr('href', 'tel:' + '+1-' + '203-' + '606-' + '4755')
                 .text('203.' + '606.' + '4755');
