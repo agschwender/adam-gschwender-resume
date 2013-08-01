@@ -22,10 +22,17 @@ COMPUTER SKILLS
         • Version Control Systems: SVN, CVS, GNU arch, Git
         • Web Servers: Apache, Nginx, AOLServer, IIS
         • Libraries/Frameworks: jQuery, Google APIs, Facebook API, Tornado, Django, Disco, Play
+        • Automation/Deployment: Puppet, Capistrano, Vagrant, Grunt, Supervisord
 
 EXPERIENCE
 
-    Senior Software Engineer 2011-Present McCann Erickson
+    Senior Software Engineer 2013 Warby Parker
+        • Wrote credit card processing application in Groovy which interacted with Merchant e-Solutions.
+        • Acted as implementation lead on the site conversion agile team.
+        • Integrated visual redesign to checkout flow
+        • Automated setup of developer workstations and environments for Magento application, including database migration via Flyway and deployment via Capistrano.
+
+    Senior Software Engineer 2011-2013 McCann Erickson
         • Acted as technical lead on several web service based WebLogic applications that were written in Java using the Play framework.
         • Developed an android application which allows users to take, store and share photos.
         • Developed a copy editing application in Django that provides non-developers with the ability to modify a website's copy without requiring developer support.
