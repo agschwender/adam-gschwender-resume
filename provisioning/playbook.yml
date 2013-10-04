@@ -21,6 +21,12 @@
         group=root
     - command: cat /home/vagrant/.ssh/authorized_keys
       register: authorized_keys
+    - file: >
+        path=/home/ubuntu/.ssh
+        state=directory
+        mode=0700
+        owner=ubuntu
+        group=ubuntu
     - authorized_key: user=ubuntu key="{{ item }}"
       with_items: authorized_keys.stdout_lines
 
@@ -84,13 +90,21 @@
     - name: running iptables check
       service: name=iptables-persistent state=running enabled=yes
 
-    - file: path=/var/www/gschwa.com state=directory owner=ubuntu group=ubuntu
-      tags:
-        - source_sync
 
-    - name: foo
-      local_action: command pwd
-      sudo: false
+  handlers:
+    - name: restart nginx
+      service: name=nginx state=restarted
+
+    - name: restart iptables
+      service: name=iptables-persistent state=restarted
+
+
+- hosts: web:!vagrant
+  user: ubuntu
+  sudo: False
+
+  tasks:
+    - file: path=/var/www/gschwa.com state=directory owner=ubuntu group=ubuntu
 
     - name: sync source
       local_action: >
@@ -100,11 +114,3 @@
         -avz
         ../www/
         -e ssh ubuntu@$inventory_hostname:/var/www/gschwa.com/
-      sudo: false
-
-  handlers:
-    - name: restart nginx
-      service: name=nginx state=restarted
-
-    - name: restart iptables
-      service: name=iptables-persistent state=restarted
