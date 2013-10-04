@@ -1,0 +1,110 @@
+# Ansible playbook
+#
+# To provision:
+#    ansible-playbook -i <inventory> playbook.yml
+#
+# VERSION 0.1
+# ANSIBLE-VERSION 1.2.2
+
+- hosts: vagrant
+  user: vagrant
+  sudo: True
+
+  tasks:
+    - user: name=ubuntu groups=admin shell=/bin/bash state=present
+    - file: path=/etc/sudoers.d mode=0770 owner=root group=root state=directory
+    - copy: >
+        src=files/etc/sudoers
+        dest=/etc/sudoers
+        mode=0440
+        owner=root
+        group=root
+    - command: cat /home/vagrant/.ssh/authorized_keys
+      register: authorized_keys
+    - authorized_key: user=ubuntu key="{{ item }}"
+      with_items: authorized_keys.stdout_lines
+
+
+- hosts: all
+  user: ubuntu
+  sudo: True
+
+  tasks:
+    - name: update apt
+      apt: update_cache=yes
+
+    - name: install apt packages
+      apt: pkg=$item
+      with_items:
+        - build-essential
+        - ntp
+        - python-software-properties
+
+
+- hosts: web
+  user: ubuntu
+  sudo: True
+
+  tasks:
+    - name: add nginx repo
+      apt_repository: repo="ppa:nginx/stable"
+
+    - name: update apt
+      apt: update_cache=yes
+
+    - name: install apt packages
+      apt: pkg=$item
+      with_items:
+        - iptables
+        - iptables-persistent
+        - nginx
+
+    - name: copy nginx configuration
+      copy: src=files/etc/nginx/nginx.conf dest=/etc/nginx/nginx.conf mode=0644
+      notify:
+        - restart nginx
+
+    - name: remove default site
+      file: path=/etc/nginx/sites-enabled/default state=absent
+      notify:
+        - restart nginx
+
+    - name: running nginx check
+      service: name=nginx state=running enabled=yes
+
+    - copy: src=files/etc/motd dest=/etc/motd mode=0644
+
+    - name: setup iptables rules
+      copy: src={{ item }} dest=/etc/iptables/ mode=0644 owner=root group=root
+      with_fileglob:
+        - files/etc/iptables/*
+      notify:
+        - restart iptables
+
+    - name: running iptables check
+      service: name=iptables-persistent state=running enabled=yes
+
+    - file: path=/var/www/gschwa.com state=directory owner=ubuntu group=ubuntu
+      tags:
+        - source_sync
+
+    - name: foo
+      local_action: command pwd
+      sudo: false
+
+    - name: sync source
+      local_action: >
+        command
+        rsync
+        --delete
+        -avz
+        ../www/
+        -e ssh ubuntu@$inventory_hostname:/var/www/gschwa.com/
+      sudo: false
+
+  handlers:
+    - name: restart nginx
+      service: name=nginx state=restarted
+
+    - name: restart iptables
+      service: name=iptables-persistent state=restarted
