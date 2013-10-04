@@ -114,3 +114,5 @@
         -avz
         ../www/
         -e ssh ubuntu@$inventory_hostname:/var/www/gschwa.com/
+      tags:
+        - deploy
