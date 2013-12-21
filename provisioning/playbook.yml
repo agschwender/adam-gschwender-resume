@@ -105,6 +105,8 @@
 
   tasks:
     - file: path=/var/www/gschwa.com state=directory owner=ubuntu group=ubuntu
+      tags:
+        - deploy
 
     - name: sync source
       local_action: >
