@@ -23,12 +23,14 @@ Vagrant.configure("2") do |config|
   # argument is a set of non-required options.
   config.vm.synced_folder "./www", "/var/www/gschwa.com", :owner => "vagrant"
 
-  # Enable provisioning with Puppet stand alone.  Puppet manifests
-  # are contained in a directory path relative to this Vagrantfile.
+  # Enable provisioning with ansible. Ansible playbooks and inventory
+  # files are contained in a directory path relative to this
+  # Vagrantfile.
   config.vm.provision :ansible do |ansible|
     ansible.playbook = "provisioning/playbook.yml"
     ansible.inventory_path = "provisioning/vagrant"
     ansible.verbose = true
+    ansible.limit = "all"
   end
 
 end
