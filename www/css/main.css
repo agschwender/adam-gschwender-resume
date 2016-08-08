@@ -275,7 +275,7 @@ body {
     filter: alpha(opacity=30);
 }
 
-@media (max-width: 630px) {
+@media (max-width: 700px) {
     [data-role=header] h1 {
         font-size: 390%;
         max-width: 380px;
@@ -290,7 +290,7 @@ body {
     }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 610px) {
     [data-role=content] { margin-top: 10px; }
 
     [data-role=header] h1 {
