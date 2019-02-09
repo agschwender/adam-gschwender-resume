@@ -8,7 +8,7 @@ Project for managing and deploying my resume.
 Developing on the project assumes you have [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/) set up. The project defines two containers:
 
 * An `nginx` container which serves a static HTML website
-* A `certbot` container for managing SSL certs (forked from [wmnnd/nginx-certbot](https://github.com/wmnnd/nginx-certbot)
+* A `certbot` container for managing SSL certs (forked from [wmnnd/nginx-certbot](https://github.com/wmnnd/nginx-certbot))
 
 ### Running
 
