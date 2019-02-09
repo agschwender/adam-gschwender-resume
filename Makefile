@@ -1,4 +1,4 @@
-.PHONY: help build deploy deploy.ssh logs run start stop
+.PHONY: help deploy deploy.ssh deploy.initssl initssl logs run shell start stop
 
 default: help
 
@@ -10,25 +10,30 @@ help: ## Show this help
 	@echo
 	@fgrep -h " ## " $(MAKEFILE_LIST) | fgrep -v fgrep | sed -Ee 's/([a-z.]*):[^#]*##(.*)/\1##\2/' | column -t -s "##"
 
-build: ## Build the application
-	@docker build -t adam-resume .
-
 deploy: ## Deploy the application
-	@rsync -av -e ssh --exclude='.git*' --delete . root@gschwa:/usr/local/src/gschwa
-	@ssh -t root@gschwa "cd /usr/local/src/gschwa; docker build -t adam-resume .; (docker stop adam-resume-cntr || true); docker run --name adam-resume-cntr -d -p 80:80 --rm adam-resume"
+	@rsync -av -e ssh --exclude='.git*' --exclude='data/certbot' --delete . root@gschwa:/usr/local/src/gschwa
+	@ssh -t root@gschwa "cd /usr/local/src/gschwa; docker-compose up --build -d; docker-compose exec gschwa nginx -s reload"
 
 deploy.ssh: ## SSH to the deploy application server
 	@ssh -t root@gschwa "cd /usr/local/src/gschwa; /bin/bash"
 
+deploy.initssl: ## Initialize SSL certs on application server
+	@ssh -t root@gschwa "cd /usr/local/src/gschwa; ./init-letsencrypt.sh"
+
+initssl: ## Initialize SSL certs on the local server
+	@LOCAL=1 ./init-letsencrypt.sh
+
 logs: ## Show the logs from the application
-	@docker logs -f adam-resume-cntr
+	@docker-compose logs --follow gschwa
 
 run: ## Run the application locally in interactive mode
-	@docker run --name adam-resume-cntr -i -p 80:80 --rm adam-resume
+	@docker-compose up --build gschwa
+
+shell: ## Create a shell in the application container
+	@docker-compose exec gschwa /bin/bash
 
 start: ## Run the application locally in the background
-	@docker run --name adam-resume-cntr -d -p 80:80 --rm adam-resume
+	@docker-compose up --build -d gschwa
 
 stop: ## Stop the application
-	@docker stop adam-resume-cntr
-
+	@docker-compose down
